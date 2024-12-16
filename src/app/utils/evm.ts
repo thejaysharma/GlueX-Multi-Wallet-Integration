@@ -29,3 +29,35 @@ export const connectMetamaskWallet = async (): Promise<string> => {
         throw new Error("Metamask is not installed!");
     }
 };
+
+/**
+ * Sends an EVM transaction from one address to another
+ * @param {string} sender - The address sending the transaction
+ * @param {string} reciever - The address receiving the transaction
+ * @param {string} value - The amount of ETH to send (in ETH units, not Wei)
+ * @returns {Promise<string>} The transaction hash
+ * @throws {Error} If the transaction fails to send
+ */
+export const sendEvmTransaction = async (sender: string, reciever: string, value: string): Promise<string> => {
+    try {
+        // Create an Ethereum provider using the browser's web3 instance
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        // Get the signer (wallet) instance
+        const signer = await provider.getSigner();
+        // Send the transaction
+        const tx = await signer.sendTransaction({
+            to: reciever,
+            value: ethers.parseEther(value), // Convert ETH to Wei
+        });
+        // Wait for transaction to be mined
+        await tx.wait();
+        // Return the transaction hash
+        return tx.hash;
+    }
+    catch (error) {
+        toast.error("Error sending transaction!");
+        console.error("Error sending transaction:", error);
+        throw new Error("Error sending transaction");
+    }
+};
+
