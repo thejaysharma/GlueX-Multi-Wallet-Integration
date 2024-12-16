@@ -53,7 +53,7 @@ This project is a **Next.js** application designed to integrate multiple blockch
 3. **Set Up Environment Variables**:
    ```bash
    NEXT_PUBLIC_SOLANA_CONNECTION_URL=https://api.devnet.solana.com
-    NEXT_PUBLIC_APTOS_NODE_URL=https://api.mainnet.aptoslabs.com/v1
+   NEXT_PUBLIC_APTOS_NODE_URL=https://api.mainnet.aptoslabs.com/v1
 4. **Run the Development Server**:
    ```bash
    npm run dev
@@ -89,8 +89,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
    - Use the Aptos SDK to transfer tokens with wallets like Pontem and Petra.
 
 ---
-
-Enable network switching directly from the app.
 
 ## **Future Enhancements**
 
