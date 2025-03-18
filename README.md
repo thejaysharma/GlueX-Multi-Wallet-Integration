@@ -1,4 +1,4 @@
-# Multi-Wallet Integration and Transaction Application
+# Multi-Wallet Integration and Transaction Application (Web3 ConnectX)
 
 This project is a **Next.js** application designed to integrate multiple blockchain wallets across different ecosystems (EVM, Solana, and Aptos) and allow users to perform on-chain actions such as sending transactions. Built using **Tailwind CSS**, it ensures a responsive and visually appealing UI, with **Redux** handling state management. Features include wallet connection, transaction signing, real-time notifications with **React Toast**, and user feedback through **loaders**.
 
